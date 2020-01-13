@@ -1,0 +1,64 @@
+﻿<!-- 用户卡片有二个模板，
+一个是登录模板，一个是为登录模板 
+  通过 字段 isLogin 来决定是登录，还是为登录
+-->
+<import name="login" src="./component/c_login"></import>
+<import name="logout" src='./component/c_logout'></import>
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div class="background">
+    <div class="container" >
+      <login if="{{isLogin}}" content="{{content_login}}" onClick="login"></login>
+      <logout if="{{!isLogin}}" content="{{content_logout}}" onClick="login"></logout>
+    </div>
+  </div>
+</template>
+
+<style>
+  .background{
+    background-color: #fafafa;
+  }
+  .container {
+    margin-top: 15px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+  }
+</style>
+
+<script>
+  module.exports = {
+    data: {
+      isLogin: false,
+      content_login: {
+        userInfo: {
+          username: "小龙"
+        },
+        //此数组数据可以设置不同个，组件里面会相应变化
+        expand: [
+          {
+            number: "12",
+            name: "我的星球"
+          },
+          {
+            number: "34",
+            name: "星球足迹"
+          },
+          {
+            number: "56",
+            name: "星球收藏"
+          }
+        ]
+      },
+      content_logout: {
+        title: "登录康康账户",
+        subTitle: "云端同步您的搜索历史和知识收藏"
+      }
+    },
+    login() {
+      this.isLogin = !this.isLogin
+    }
+    
+  }
+</script>

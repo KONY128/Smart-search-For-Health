@@ -1,0 +1,191 @@
+<import name="card" src="./card/card"></import>
+<template>
+    <div class="background">
+        <div class="container">
+            <image class="show" src="../MainPage/img/bg/stars.png"/>
+            <text class="prompt">点击知识星球，探索更多健康知识</text>
+
+            <div class="splitLine"></div>
+
+            <div class="cardArea">
+                <text class="cardText">在库谣言文章：</text>
+                <card data="{{data1}}"></card>
+                <text class="moreText">查看更多...</text>
+            </div>
+
+            <div class="splitLine"></div>
+
+            <div class="cardArea">
+                <text class="cardText">在库辟谣文章：</text>
+                <card data="{{data2}}"></card>
+                <text class="moreText">查看更多...</text>
+            </div>
+
+            <div class="splitLine"></div>
+            <div class="specArea">
+                <text class="cardText">权威知识百科：(来自：国家卫健委-百科名医)</text>
+                <text>癌是指起源于上皮组织的恶性肿瘤。</text>
+                <div class="spec">
+                    <image src="https://pic.baikemy.com/ms/images/tb12.png"></image>
+                    <text>肿瘤科</text>
+                </div>
+                <div class="spec">
+                    <image src="https://pic.baikemy.com/ms/images/tb18.png"></image>
+                    <text>病因尚未完全了解。</text>
+                </div>
+                <div class="spec">
+                    <image src="https://pic.baikemy.com/ms/images/tb15.png"></image>
+                    <text>生活不规律，抽烟喝酒等人群高发。</text>
+                </div>
+                <div class="spec">
+                    <image src="https://pic.baikemy.com/ms/images/tb17.png"></image>
+                    <text>癌症较难治愈。</text>
+                </div>
+                <div class="spec">
+                    <image src="https://pic.baikemy.com/ms/images/tb14.png"></image>
+                    <text>症状体征结合实验室检查和细胞病理学检查诊断</text>
+                </div>
+                <div class="spec">
+                    <image src="https://pic.baikemy.com/ms/images/tb13.png"></image>
+                    <text>癌症局部有肿块，疼痛，溃疡，梗阻等症状</text>
+                </div>
+                <div class="spec">
+                    <image src="https://pic.baikemy.com/ms/images/tb16.png"></image>
+                    <text>主要以手术治疗为主，辅以放化疗和中药治疗。</text>
+                </div>
+                <div class="cardArea">
+                    <text class="moreText">查看诊断症状、治疗护理...</text>
+                </div>
+            </div>
+                        
+            <div class="splitLine"></div>
+            <div class="btn-push">
+                <text class="btn-p-text">分享至破谣宇宙</text>
+            </div>
+            <div class="starArea">
+                <text class="prompt">您为此次破谣探险评分</text>
+                <rating class="star"></rating>
+            </div>
+            <div class="btm"></div>
+            
+            
+        </div>
+    </div>
+</template>
+
+<style>
+.background{
+    background-color:#fafafa;
+}
+.container{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.show{
+    width: 80%;
+}
+.starArea{
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.prompt{
+    font-size: 22px;
+    color: #bababa;
+}
+.splitLine{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 2px;
+    width: 92%;
+    background-color: #cacaca;
+}
+.specArea{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 90%;
+    align-content: flex-start;
+    flex-direction: column;
+}
+.cardArea{
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+}
+.cardText{
+    align-self: flex-start;
+    font-size: 22px;
+    color: #bababa;
+    margin-bottom: 15px;
+}
+.moreText{
+    margin-top: 15px;
+    font-size: 30px;
+    color: #87CEFA;
+}
+.star{
+    width: 350px; 
+}
+.btn-push{
+    margin-top: 30px;
+    border-radius: 40px;
+    border: 1px solid #dadada;
+    background-color: #ffffff;
+    height:  100px;
+}
+.btn-p-text{
+    color: #87CEFA;
+    font-size: 36px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.btm{
+    height: 50px;
+}
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            //this.blala为传入的文章内容
+            data1 :{
+                imgSrc : './img/news/1.png',
+                heading: '冬天第一大补，不是羊肉也不是牛肉，而是这种家常菜！四高齐降吓跑大病！',
+                body: '美国纽约激素研究所讨论的科学家发明，中国和日本妇女乳腺癌率之所以必西方妇女低得多，是由于她们常吃白菜的缘故。白菜中有一些微量元素，它们能辅助分解同乳腺癌相接洽的雌激素。白菜含有的微量元素钼，能阻断亚硝胺等致癌物质再人体内的产生，达到预防癌症的目的。',
+                from: '微信公众号',
+                creator: '四季健康养身菜谱',
+                time: '2019-12-21',
+                url: 'https://www.toutiao.com/i6752513502272815620/'
+            },
+            data2 :{
+                imgSrc : './img/news/2.png',
+                heading: '辟谣-冬天第一大补，不是羊肉也不是牛肉，而是这种家常菜！四高齐降吓跑大病！',
+                body: '美国抗癌研究所曾明确指出，没有一种单一的食物，或者是单一的食物成分，能够使任免患癌症。盲目地把少数食物（即使其中确实含有有益健康的成分）称为“抗癌食物”，反而会误导公众，让人误认为只有这些食物真的具有神奇的、不可替代的抗癌作用，',
+                from: '腾讯新闻',
+                creator: '全民较真',
+                time: '2019-12-27',
+                url: 'https://www.toutiao.com/i6752513502272815620/'
+            },
+            data3 :{
+                imgSrc : 'img/news/mg2.jpg',
+                heading: '胎位不正将不能顺产，怎么办',
+                body: '胎位不正是导致难产的主要原因，宝宝从孕妈阴道娩出，主要有头先露、臀先露、肩先露几种，头先露的枕前位是比较容易娩出的胎位，其他胎位都会增加分娩的难度，可以称之为胎位不正。如果是臀先露，宝宝的臀部周径一般比头部小，而且宝宝的臀部软，可以变形，头部硬，难变形，宝宝臀部娩出后，',
+                from: '百科名医网',
+                creator: '国家卫健委',
+                time: '',
+                url: 'https://www.toutiao.com/i6752513502272815620/'
+            },
+
+        },
+        onInit() {
+            this.$page.setTitleBar({
+                text: '探索报告',
+                textColor: '#ffffff',
+                backgroundColor: '#007DFF',
+                backgroundOpacity: 0.5,
+                menu:true
+            })
+        }
+    }
+</script>

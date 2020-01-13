@@ -1,0 +1,82 @@
+<!-- 
+调用此组件的页面需要传入此数据
+    content: {
+        portrait: "./c_user_card_no_login_avatar.png",//未登录的头像
+        title: ""
+        subTitle: ""
+      }
+ -->
+<template>
+  <!-- template里只能有一个根节点 -->
+  <!-- 如果background-image需要调用所传的参数，不能使用url,直接使用{{url}}即可 -->
+  <div class="user-card-nologin">
+
+    <div class="portrait-noexpand">
+      <image src='../img/c_user_card_no_login_avatar.png'></image>
+      <div class="name-nologin">
+        <text class="main-title">{{content.title}}</text>
+        <text class="sub-title">{{content.subTitle}}</text>
+      </div>
+    </div>
+
+  </div>
+</template>
+
+<style>
+  .user-card-nologin {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 90%;
+    height: 320px;
+    border-radius: 15px;
+    padding: 0 15px;
+    border: 1px solid #dadada;
+    background-image: url('img/bg/logout.jpg');
+    /*background-image: url('../img/nologin_bg.png');*/
+  }
+
+  .portrait-noexpand {
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: right;
+  }
+
+  .portrait-noexpand image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .name-nologin {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 41px;
+  }
+
+  .main-title {
+    font-size: 31px;
+    font-weight: 400;
+    color: #fafafa;
+    /*color: #1A1A1A;*/
+  }
+
+  .sub-title {
+    font-size: 25px;
+    font-weight: 400;
+    color: #c8c8c8;
+    /*color: #7B7B7B;*/
+  }
+</style>
+
+<script>
+
+  module.exports = {
+    props: [
+      'content'
+    ]
+  }
+</script>

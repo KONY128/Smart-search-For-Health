@@ -1,0 +1,37 @@
+{
+  "package": "com.sjtu.demo1",
+  "name": "智搜健康",
+  "versionName": "1.0.0",
+  "versionCode": 1,
+  "icon": "/Common/logo.png",
+  "minPlatformVersion": 1060,
+  "features": [
+    {
+      "name": "system.configuration"
+    }
+  ],
+  "permissions": [
+    {
+      "origin": "*"
+    }
+  ],
+  "config": {},
+  "router": {
+    "entry": "MainPage",
+    "pages": {
+      "MainPage": {
+        "component": "MainPage"
+      },
+      "Search": {
+        "component": "Search"
+      }
+    }
+  },
+  "display": {
+    "pages": {
+      "MainPage": {
+        "titleBarText": "智搜健康"
+      }
+    }
+  }
+}

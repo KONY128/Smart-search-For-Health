@@ -1,0 +1,56 @@
+<template>
+  <div class="set-content">
+    <div for="{{list}}" class="set-box" onclick="detail($item.src)">
+      <text class="set-title">{{$item.title}}</text>
+      <text class="set-sub-title">{{$item.subTitle}}</text>
+      <!-- <image class="set-img" src="component/Component_Set/img/arrow.png"></image> -->
+    </div>
+  </div>
+</template>
+
+<style>
+  .set-content {
+    flex-direction: column;
+    padding: 0px 33px;
+  }
+
+  .set-box {
+    border-color: #cccccc;
+    border-bottom-width: 0.5px;
+    align-items: center;
+    width: 700px;
+  }
+
+  .set-title {
+    padding-top: 29px;
+    padding-bottom: 29px;
+    color: #1a1a1a;
+    font-size: 31px;
+    flex: 1;
+  }
+
+  .set-sub-title {
+    color: #8d8d8d;
+    font-size: 27px;
+  }
+
+  .set-img {
+    height: 28px;
+    width: 16px;
+    margin-left: 14px;
+    margin-right: 10px;
+  }
+</style>
+
+<script>
+  import router from "@system.router";
+  module.exports = {
+    props: ["list"],
+    detail: function (src) {
+      router.push({
+        uri: src
+      });
+      console.log(src);
+    }
+  };
+</script>

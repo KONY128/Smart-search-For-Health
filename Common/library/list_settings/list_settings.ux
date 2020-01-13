@@ -1,0 +1,52 @@
+//快捷入口组件调用示范
+<import name="set" src="./c_set"></import>
+<template>
+	<div class="container">
+		<set list="{{setlist}}"></set>
+	</div>
+</template>
+
+<style>
+.container {
+  flex-direction: column;
+}
+</style>
+
+<script>
+module.exports = {
+  data: {
+    setlist: [
+      {
+        title: "账户设置",
+        subTitle: "",
+        src: ""
+      },
+      {
+        title: "通知与提醒",
+        subTitle: "",
+        src: ""
+      },
+      {
+        title: "付费咨询",
+        subTitle: "",
+        src: ""
+      },
+      {
+        title: "钱包",
+        subTitle: "",
+        src: ""
+      },
+      {
+        title: "帮助与反馈",
+        subTitle: "",
+        src: ""
+      },
+      {
+        title: "关于",
+        subTitle: "",
+        src: ""
+      }
+    ]
+  }
+};
+</script>

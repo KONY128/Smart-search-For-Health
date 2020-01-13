@@ -1,0 +1,22 @@
+<import name="sub_tab" src="../../../common/library/sub_tab/sub_tab.ux"></import>
+<template>
+  <div class="background">
+
+  	<sub_tab></sub_tab>
+
+  </div>
+</template>
+
+<style>
+  .background {
+    background-color: #fafafa;
+    width: 100%;
+  }
+</style>
+
+<script>
+  // 父组件
+  export default {
+    
+  }
+</script>

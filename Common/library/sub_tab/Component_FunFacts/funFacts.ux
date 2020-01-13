@@ -1,0 +1,133 @@
+<import name="card" src="./card/card"></import>
+<template>
+    <div class="container">
+        <div class="selectArea">
+            <text class="selectText">
+                推送方式
+            </text>
+            <select class="select">
+                    <option selected="true" value="byDefault">推荐</option>
+                    <option selected="false" value="byFavours">关注</option>
+                    <option selected="false" value="byHeat">热度</option>
+                    <option selected="false" value="byTime">最新</option>
+            </select>
+        </div>
+        <div class="splitter"></div>
+        <div class="cardArea">
+            <card class="card" data="{{data1}}"></card>
+            <card class="card" data="{{data2}}"></card>
+            <card class="card" data="{{data3}}"></card>
+            <card class="card" data="{{data4}}"></card>
+            <card class="card" data="{{data5}}"></card>
+            <card class="card" data="{{data6}}"></card>
+            <card class="card" data="{{data7}}"></card>
+            <card class="card" data="{{data8}}"></card>
+        </div>
+    </div>
+</template>
+
+<style>
+    .container{
+        flex-direction: column;
+    }
+    .selectArea{
+        align-self: center;
+    }
+    .selectText{
+        margin-right: 330px;
+    }
+    .select{
+    }
+    .splitter{
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+        height:1px;
+        border: 1px solid #dddddd;
+    }
+    .cardArea{
+        flex-direction: column;
+        margin-top: 35px;
+    }
+    .card{
+        margin-bottom: 20px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            data1: {
+                imgSrc : 'img/news/dx1.jpg',
+                heading: '不花冤枉钱，体检项目必做清单',
+                body: '《中国卫生和计划生育统计年鉴》的数据显示，2017 年全国体检人数增长到 4.56 亿人次，且这个数字依然在增长。面对复杂的体检项目，不少人都一脸懵，也花了不少冤枉钱。到底有哪些项目不用体检呢？下面提到的 5 项，普通人的常规体检不用做，大可不必花冤枉钱。',
+                from: '知乎',
+                creator: '丁香医生',
+                time: '2019-11-06',
+                url: ''
+            },
+            data2: {
+                imgSrc : 'img/news/mg1.jpg',
+                heading: '热水泡脚: 暖身，解乏，助眠',
+                body: '人人知晓泡脚好，但却不知泡脚难。天越冷，水就凉得越快。得不停加水，不停地伸脚试水温。很多洗脚盆加了水后特别重，不方便搬运，搞不好还弄出个椎间盘突出。而且，大脚盆用完后，放哪都占地方，碍事！',
+                from: '今日头条',
+                creator: '淼哥故事会',
+                time: '2019-11-19',
+                url: ''
+            },
+            data3: {
+                imgSrc : 'img/news/kp1.jpg',
+                heading: '午觉如何健康又高效?',
+                body: '午觉睡多久？什么时候睡？怎么能醒来后精神充沛？睡眠专家达米安达韦纳在法国《玛丽-克莱尔报》给出了午觉健康高效的几个要点。',
+                from: '中国科普网',
+                creator: '达米安达韦纳[法]',
+                time: '2018-11-06',
+                url: 'http://kepu.gov.cn/www/article/dtxw/ed7c3fc776484bb8b5f24b26ddc9413f'
+            },
+            data4: {imgSrc : 'img/news/sh1.png',
+                heading: '这些小习惯能帮你节后高效工作',
+                body: '新的一年，工作也有新气象。医生说的这些好习惯，养成之后就能更健康、更高效地工作。除了工作精致，更要活得精致。1.调整电脑显示器位置',
+                from: '搜狐',
+                creator: '健康蒲江',
+                time: '2019-02-13',
+                url: 'http://www.sohu.com/a/294504486_100044071'
+            },
+            data5: {
+                imgSrc : 'img/news/dx3.png',
+                heading: '4个减肥误区，让你瘦不下来',
+                body: '微信步数总是高居朋友圈第一，体重却丝毫不减，稳如泰山。走路减肥、局部减脂、练瑜伽、运动必须出汗……每日锻炼，一心向瘦。但这几个运动方法，真不能帮你变瘦。在减肥的路上，你踩了哪些坑？',
+                from: '知乎',
+                creator: '丁香医生',
+                time: '2019-11-20',
+                url: 'https://zhuanlan.zhihu.com/p/92734005'
+            },
+            data6: {
+                imgSrc : 'img/news/dx2.jpg',
+                heading: '健康喝水十问',
+                body: '所谓的「千滚水」就是多次烧开的自来水，它和隔夜水常被扣上「亚硝酸盐超标」的罪名，进而和「致癌」扯上关系。即使反复烧开 20 次的开水，亚硝酸盐含量都到不了国家饮用水标准要求上限的 3%。完全不用担心千滚水会亚硝酸盐过量。',
+                from: '知乎',
+                creator: '丁香医生',
+                time: '2019-11-28',
+                url: 'https://zhuanlan.zhihu.com/p/94078674'
+            },
+            data7: {
+                imgSrc : 'img/news/mg2.jpg',
+                heading: '胎位不正将不能顺产，怎么办',
+                body: '胎位不正是导致难产的主要原因，宝宝从孕妈阴道娩出，主要有头先露、臀先露、肩先露几种，头先露的枕前位是比较容易娩出的胎位，其他胎位都会增加分娩的难度，可以称之为胎位不正。如果是臀先露，宝宝的臀部周径一般比头部小，而且宝宝的臀部软，可以变形，头部硬，难变形，宝宝臀部娩出后，',
+                from: '今日头条',
+                creator: '淼哥故事会',
+                time: '2019-10-28',
+                url: 'https://www.toutiao.com/i6752513502272815620/'
+            },
+            data8: {
+                imgSrc : 'img/news/mg3.jpg',
+                heading: '久坐不动？用它，拯救你的腰',
+                body: '在办公室的你，是不是经常这个样子？坐着不动，随随便便就是 5、6 个小时。扶着头，盯着屏幕，背不知不觉弯成一座大山。工作期间大写加粗的「坐没坐相」。自信傲娇地从来不用任何「护腰工具」。如果以上几个行为，你中了一条甚至几条。那么你得注意了',
+                from: '今日头条',
+                creator: '淼哥故事会',
+                time: '2019-11-12',
+                url: 'https://www.toutiao.com/i6758336960793690628/'
+            }
+        }
+    }
+</script>

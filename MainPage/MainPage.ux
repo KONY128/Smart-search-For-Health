@@ -1,0 +1,37 @@
+<!-- 
+  参数：每个item包含：图片路径img，标题。以及对应的选中时的
+  图片img和标题颜色，参照下面的写法
+ -->
+<!-- 不可滑动主tab -->
+<import name="MainTab" src="./Tab/tab"></import>
+<template>
+  <div>
+    <MainTab data="{{data}}"></MainTab>
+  </div>
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      data: {
+        color_normal: '#1A1A1A',
+        color_active: '#FF7500',
+        list: [
+          { i: 0, color: '#87CEFA', pic: 'img/home_nor.png', pic_choice: 'img/home_cho.png', show: false, title: '知识星球' },
+          { i: 1, color: '#87CEFA', pic: 'img/classification_nor.png', pic_choice: 'img/classification_cho.png', show: false, title: '星球宇宙' },
+          { i: 2, color: '#87CEFA', pic: 'img/shoppingCart_nor.png', pic_choice: 'img/shoppingCart_cho.png', show: false, title: '权威破谣' },
+          { i: 3, color: '#87CEFA', pic: 'img/mine_normal.png', pic_choice: 'img/mine_choice.png', show: false, title: '个人主页' }
+        ]
+      }
+    },
+    onInit() {
+      this.$page.setTitleBar({
+        text: '智搜健康',
+        textColor: '#ffffff',
+        backgroundColor: '#007DFF',
+        backgroundOpacity: 0.5,
+        menu:true
+      })
+    }
+  }
+</script>

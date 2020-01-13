@@ -1,0 +1,178 @@
+<import name="list_settings" src="../../../../common/library/list_settings/list_settings.ux"></import>
+<!-- 调用此组件的页面需要传入此数据
+  content: {
+        userInfo: {
+          portrait: "./c_user_card_login_avatar.png",//用户头像
+          username: ""//用户名称
+        },
+        //此数组数据可以设置不同个，组件里面会相应变化
+        expand: [
+          {
+            number: "12",
+            name: ""
+          },
+          {
+            number: "34",
+            name: ""
+          },
+          {
+            number: "56.00",
+            name: ""
+          }
+        ]
+      }
+ -->
+
+<template>
+  <!-- template里只能有一个根节点 -->
+  <!-- 如果background-image需要调用所传的参数，不能使用url,直接使用{{url}}即可 -->
+  <div class="container">
+    <div class="user-card">
+      <div class="usercard-top">
+        <div class="{{expand.length>0?'portrait':'portrait-noexpand'}}">
+          <image src="../img/c_user_card_login_avatar.jpg"></image>
+          <div class="name">
+            <text>{{userInfo.username}}</text>
+          </div>
+        </div>
+      </div>
+
+      <block if="{{expand.length>0}}">
+        <div class="usercard-bottom">
+          <block for="{{expand}}">
+            <block if="{{$idx>0}}">
+              <div class="line"></div>
+            </block>
+            <div class="usercard-bottom-item">
+              <div class="item-top">
+                <text>{{$item.number}}</text>
+              </div>
+              <div class="item-bottom">
+                <text>{{$item.name}}</text>
+              </div>
+            </div>
+          </block>
+        </div>
+      </block>
+
+    </div>
+
+  	<list_settings class="settings"></list_settings>
+  </div>
+</template>
+
+<style>
+  .container{
+    width: 100%;
+    flex-direction: column;
+  }
+  .user-card {
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 90%;
+    height: 320px;
+    border-radius: 15px;
+    padding: 0px 15px;
+    border: 1px solid #dadada;
+    background-image: url('img/bg/login.jpg');
+    /*background-image: url('../img/login_bg.png');*/
+  }
+
+  .usercard-top {
+    width: 100%;
+    height: 190px;
+  }
+
+  .portrait {
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+    text-align: right;
+  }
+
+  .portrait-noexpand {
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: right;
+  }
+
+  .portrait image {
+    border-radius: 70px;
+    width: 100px;
+    height: 100px;
+    margin: 50px 33.3px 0px 50px;
+  }
+
+  .portrait-noexpand image {
+    border-radius: 70px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .name text {
+    font-weight: 500;
+    font-size: 31px;
+    color: #fafafa;
+    margin: 50px 0px 0px 0px;
+  }
+
+  .usercard-bottom {
+    width: 100%;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .usercard-bottom-item {
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+  }
+
+  .item-top {
+    margin-bottom: 14px;
+  }
+
+  .item-top text {
+    font-weight: bold;
+    font-size: 31px;
+    text-align: center;
+    color: #fafafa;
+  }
+
+  .item-bottom text {
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    color: #fafafa;
+  }
+
+  .line {
+    height: 50px;
+    width: 2px;
+    margin: 0 20px;
+    background-color: #fafafa;
+  }
+  .settings{
+    margin-top: 30px;
+  }
+</style>
+
+<script>
+  module.exports = {
+    props: [
+      'content'
+    ],
+    data() {
+      return {
+        userInfo: this.content.userInfo,
+        expand: this.content.expand
+      }
+    }
+  }
+</script>

@@ -1,0 +1,240 @@
+<template>
+    <div class="container">
+        <div class="MainContent">
+
+            <div class="InfoArea">
+                <div class="Avatar">
+                    <image src="{{data.AvatarUrl}}"></image>
+                </div>
+
+                <div class="nameAndLabel">
+                    <div class="UserName">
+                        <text>{{data.UserName}}</text>
+                        <div class="splitter"></div>
+                    </div>
+                    <div class="labelArea">
+                        <div class="label">
+                            <text class="labelText">{{data.label1}}</text>
+                        </div>
+                        <div class="label">
+                            <text class="labelText">{{data.label2}}</text>
+                        </div>
+                        <div class="label">
+                            <text class="labelText">{{data.label3}}</text>
+                        </div>
+                        <div class="label">
+                            <text class="labelText">{{data.label4}}</text>
+                        </div>
+                        <div class="label">
+                            <text class="labelText">{{data.label5}}</text>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Reliability">
+                    <text class="reliText">可信度</text>
+                    <text class="{{'reliable-'+data.reliLevel}}">{{data.reliability+"%"}}</text>
+                </div>
+            </div>
+
+            <div class="textArea">
+                <div>
+                    <text class="Text">{{data.MainLine}}</text>
+                </div>
+            </div>
+
+            <div class="BtnArea">
+                <div class="btn-upvote" onclick="upvote">
+                    <text class="btnText">点赞</text>
+                    <image class="icon" src='img/Icon_Card/upvote.png'></image>
+                </div>
+                <div class="btn-comment" onclick="comment">
+                    <text class="btnText">评论</text>  
+                    <image class="icon" src="img/Icon_Card/comment.png"></image> 
+                </div>
+                <div class="btn-share" onclick="share">
+                    <text class="btnText">转发</text>
+                    <image class="icon" src="img/Icon_Card/share.png"></image>
+                </div>
+                <div class="btn-favorite" onclick="favorite">
+                    <text class="btnText">收藏</text>
+                    <image class="icon" src="img/Icon_Card/favorite.png"></image>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</template>
+
+<style>
+.container{
+    border: 1px solid #dadada;
+    margin-top: 15px;
+    background-color: #ffffff;
+    width: 100%;
+    height: 420px; /*420px*/
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+.MainContent{
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.InfoArea{
+    height: 100px;
+}
+.Avatar{
+    border: 1px solid #f3f3f3;
+    border-radius: 70px;
+    width: 100px;
+    height: 100px;
+}
+.Avatar image{
+    border-radius: 70px;
+    width: 100px;
+    height: 100px;
+}
+.nameAndLabel{
+    flex-direction: column;
+    margin-left: 20px;
+}
+.UserName{
+    flex-direction: column;
+}
+.splitter{
+    height:2px;
+    background-color: #eaeaea;
+    width: 100%;
+}
+.labelArea{
+    margin-top: 10px;
+}
+.label{
+    width:60px;
+    height:40px;
+    border-radius: 10px;
+    border: 1px solid #22cfff;
+    background-color: #cffafc;
+    margin-right: 10px;
+}
+.labelText{
+    font-size: 20px;
+    align-self: center;
+    margin-left: 8px;
+    color:#22cfff;
+}
+.Reliability{
+    margin-left: 15px;
+}
+.reliText{
+    font-size: 22px;
+    color:#dadada;
+    align-self: flex-start;
+    text-align: right;
+}
+.reliable-3{
+    margin-left: 5px;
+    font-size: 50px;
+    color: #88ef88;
+}
+.reliable-2{
+    margin-left: 5px;
+    font-size: 50px;
+    color: #f3e8a6;
+}
+.reliable-1{
+    margin-left: 5px;
+    font-size: 50px;
+    color: #fa7e7e;
+}
+.textArea{
+    margin-left:5px;
+    margin-top: 10px;
+    border-radius: 25px;
+    border: 1px solid #eaeaea;
+    width: 650px;
+    height: 200px;
+}
+.Text{
+    align-self:flex-start;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top:10px;
+    margin-bottom: 25px;
+}
+.BtnArea{
+    margin-top:15px;
+}
+.btn-upvote{
+    margin-left: 10px;
+    border:1px solid #eaeaea;
+    width: 140px;
+    height: 60px;
+    border-radius: 20px;
+}
+.btn-comment{
+    margin-left: 28px;
+    border:1px solid #eaeaea;
+    width: 140px;
+    height: 60px;
+    border-radius: 20px;
+}
+.btn-share{
+    margin-left: 28px;
+    border:1px solid #eaeaea;
+    width: 140px;
+    height: 60px;
+    border-radius: 20px;
+}
+.btn-favorite{
+    margin-left: 28px;
+    border:1px solid #eaeaea;
+    width: 140px;
+    height: 60px;
+    border-radius: 20px;
+}
+.btnText{
+    color: #87CEFA;
+    margin-left: 15px;
+    font-size: 27px;
+}
+.icon{
+    margin-left: 10px;
+    align-self: center;
+    width: 40px;
+    height: 36px;
+}
+</style>
+
+<script>
+    module.exports = {
+        props: [
+            'data'
+        ],
+        //在程序开始时，根据输入的可信度值更改渲染
+        onInit: function () {
+            var R = this.data.reliability;
+            if (R > 75){
+                this.data.reliLevel = 3;
+            }else if(R > 40){
+                this.data.reliLevel = 2;
+            }else {
+                this.data.reliLevel = 1;
+            }
+        },
+        upvote(){
+            
+        },
+        comment(){
+
+        },
+        share(){
+
+        },
+        favorite(){
+
+        }
+    }
+</script>

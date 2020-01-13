@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <text>成功啦~！</text>
+    </div>
+</template>
+
+<style>
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            
+        }
+    }
+</script>

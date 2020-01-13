@@ -1,0 +1,96 @@
+<template>
+    <div class="container">
+        <div class="infArea">
+            <image src='{{data.imgSrc}}' class="image"/>
+            <div class="mainContent">
+                <text class="heading">
+                   {{data.heading}}
+                </text>
+                <text class="body">
+                    {{data.body}}
+                </text>
+            </div>
+        </div>
+        <div class="fromArea">
+            <div>
+                <text class="time">
+                    {{data.time}}
+                </text>
+                <text class="creator" >
+                    {{data.creator}}
+                </text>
+                <text class="from">
+                    {{data.from}}
+                </text>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    .container{
+        flex-direction: column;
+        border-radius: 30px;
+        width: 100%;
+        height: 260px;
+        border: 1px solid #dadada;
+        background-color: #ffffff;
+    }
+    .infArea{
+        margin-top:10px;
+    }
+    .image{
+        margin-top: 20px;
+        margin-left: 15px;
+        width: 150px;
+        height: 150px;
+        border-radius: 20px;
+    }
+    .mainContent{
+        margin-top: 6px;
+        width:510px;
+        margin-left: 20px;
+        flex-direction: column;
+    }
+    .heading{
+        margin-top: 10px;
+        font-size: 35px;
+        color: #000000;
+        lines: 1;
+        text-overflow: ellipsis;
+    }
+    .body{
+        font-size: 25px;
+        height: 120px;
+        lines: 3;
+        text-overflow: ellipsis;
+    }
+    .fromArea{
+        margin-top: 17px;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .creator{
+        font-size: 23px;
+        color: #bababa;
+        margin-right: 30px;
+    }
+    .from{
+        font-size: 23px;
+        color: #bababa;
+        margin-right: 30px;
+    }
+    .time{
+        font-size: 23px;
+        color: #bababa;
+        margin-right: 30px;
+    }
+</style>
+
+<script>
+    module.exports = {
+        props: [
+            'data'
+        ]
+    }
+</script>

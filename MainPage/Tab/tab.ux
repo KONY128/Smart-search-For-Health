@@ -1,0 +1,134 @@
+<!-- 固定主tab和有滑动功能的子tab一起使用
+  如果应用中没有使用到子tab，建议使用主tab组件。
+  此子tab作为样例，仅供参考
+  参数包含title和选中时颜色color
+ -->
+<import name="component_authority" src="./Component_Authority/index.ux"></import>
+<import name="component_userArea" src="./Component_UserArea/index.ux"></import>
+<import name="component_inputArea" src="./component_InputArea/index.ux"></import>
+<import name="component_shareArea" src="./component_ShareArea/index.ux"></import>
+<template>
+  <div class="container">
+    <tabs onchange="switchContent" class="tabs">
+      <tab-content class="tab-content">
+        <div class="contents">
+          <component_inputArea></component_inputArea>
+        </div>
+        <div class="contents">
+            <component_shareArea></component_shareArea>
+        </div>
+        <div class="contents">
+          <component_authority></component_authority>
+        </div>
+        <div class="contents">
+          <component_userArea></component_userArea>
+        </div>
+      </tab-content>
+
+      <tab-bar>
+        <block for="data.list">
+          <div class="tab-item">
+            <!-- 下面是Tab图标，还没准备好
+            <image if="{{$item.show}}" class="image-active" src="{{$item.show?$item.pic_choice:$item.pic}}" />
+            <image else class="image-normal" src="{{$item.show?$item.pic_choice:$item.pic}}" />
+            -->
+            <text style="color: {{$item.color}}" class="title">{{$item.title}}</text>
+          </div>
+        </block>
+      </tab-bar>
+      
+    </tabs>
+
+  </div>
+
+</template>
+
+<style>
+  .contents{
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .tabs {
+    background-color:  #fefefe;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    
+    
+  }
+
+  .tab-item {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 33px;
+    margin-right: 33px;
+    padding-top: 14px;
+    padding-bottom: 11px;
+    width: 170.8px;
+    height: 104.2px;
+  }
+
+  .image-active {
+    width: 50px;
+    height: 50px;
+    resize-mode: contain;
+  }
+
+  .image-normal {
+    width: 50px;
+    height: 50px;
+    resize-mode: contain;
+    opacity: 0.5;
+  }
+
+  .tab-item text {
+    font-size: 30px;
+    margin-top: 20px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .tab-item text:active {
+    color: #0000CD;
+    font-size: 30px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .tab-content {
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 1000px;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .tab-content text {
+    width: 100%;
+    text-align: center;
+  }
+</style>
+
+<script>
+  module.exports = {
+    props: [
+      'data'
+    ],
+    switchContent: function (e) {
+      let index = e.index;
+      for (let i = 0; i < this.data.list.length; i++) {
+        let element = this.data.list[i];
+        element.show = false;
+        if (i === index) {
+          element.show = true;
+         //this.$page.setTitleBar({ text: element.title, menu: false });
+        }
+      }
+    }
+  }
+</script>

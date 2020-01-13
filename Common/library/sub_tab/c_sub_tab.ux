@@ -1,0 +1,91 @@
+<import name="funFacts" src="./Component_FunFacts/funFacts"></import>
+<template>
+  <div class="container">
+    <tabs class="tabs" onchange="changeTabactive">
+      <tab-bar class="tab-bar">
+        <block for="datas.list">
+          <div class="tab-item">
+            <text style="color: {{$item.color}}">{{$item.title}}</text>
+            <div if="{{$item.show_line}}" class="line" style="background-color: {{datas.color_active}}"></div>
+          </div>
+        </block>
+      </tab-bar>
+
+      <tab-content class="tab-content">
+        <block>
+          <div class="container-text">
+            <funFacts class="funFacts"></funFacts>
+          </div>
+        </block>
+      </tab-content>
+    </tabs>
+  </div>
+</template>
+
+<style>
+  .funFacts{
+    width: 100%;
+    margin: 0 15px;
+  }
+  .container{
+    width: 100%;
+  }
+  .tabs{
+    width: 100%;
+  }
+  .tab-content{
+    width: 100%;
+    
+  }
+  .container-text {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tab-bar {
+    align-self: center;
+    height: 100px;
+  }
+
+  .tab-item {
+    width: 140px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-item text {
+    opacity: 0.5;
+    margin-bottom: 12px;
+    font-size: 31.3px;
+  }
+
+  .tab-item text:active {
+    font-size: 31.3px;
+    margin-bottom: 8px;
+  }
+
+  .line {
+    width: 100px;
+    height: 4px;
+  }
+</style>
+
+<script>
+  module.exports = {
+    props: [
+      'datas'
+    ],
+
+    changeTabactive: function (e) {
+      for (let i = 0; i < this.datas.list.length; i++) {
+        let element = this.datas.list[i];
+        element.show_line = false;
+        element.color = this.datas.color_normal;
+        if (i === e.index) {
+          element.show_line = true;
+          element.color = this.datas.color_active;
+        }
+      }
+    }
+  }
+</script>

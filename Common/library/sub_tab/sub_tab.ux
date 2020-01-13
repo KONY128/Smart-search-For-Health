@@ -1,0 +1,29 @@
+<!-- 子tab 参数包含：标题和激活时的颜色 -->
+<import name="subtab" src="./c_sub_tab.ux"></import>
+<template>
+  <subtab class="subtab" datas="{{datas}}"></subtab>
+</template>
+
+<style>
+.subtab{
+  width: 100%;
+}
+</style>
+
+<script>
+  module.exports = {
+    data() {
+      return {
+        datas: {
+          color_normal: '#4cb0eb',
+          color_active: '#2b63cc',
+          list: [
+            { title: '趣味科普', show_line: false, color: '#4cb0eb' },
+            { title: '辟谣文集', show_line: false, color: '#4cb0eb' },
+            { title: '辟谣机构', show_line: false, color: '#4cb0eb'}
+          ]
+        }
+      }
+    }
+  }
+</script>

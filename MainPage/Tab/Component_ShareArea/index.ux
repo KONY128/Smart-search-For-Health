@@ -1,0 +1,105 @@
+<import name="shareCard" src='./card/card'></import>
+<template>
+    <div class="background">
+        <div class="container">
+            <shareCard data="{{data1}}"></shareCard>
+            <shareCard data="{{data2}}"></shareCard>
+            <shareCard data="{{data3}}"></shareCard>
+            <shareCard data="{{data4}}"></shareCard>
+            <shareCard data="{{data0}}"></shareCard>
+        </div>
+    </div>
+</template>
+
+<style>
+.background{
+    background-color: #fafafa;
+    width: 100%;
+}
+.container{
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+}
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            data1: {
+                AvatarUrl: "img/Avatar/kpl452b.jpg",
+                UserName: "开普勒452b",
+                MainLine: "文章内容",
+                label1: "标签",
+                label2: "标签",
+                label3: "标签",
+                label4: "标签",
+                label5: "标签",
+                reliability: "86",
+                reliLevel: 3,
+                SubLineNum: 0,
+                SubLine: {}
+            },
+            data2: {
+                AvatarUrl: "img/Avatar/tw6.jpg",
+                UserName: "土卫六",
+                MainLine: "文章内容",
+                label1: "标签",
+                label2: "标签",
+                label3: "标签",
+                label4: "标签",
+                label5: "标签",
+                reliability: "49",
+                reliLevel: 3,
+                SubLineNum: 0,
+                SubLine: {}
+            },
+            data3: {
+                AvatarUrl: "img/Avatar/dpzuy.jpg",
+                UserName: "盾牌座uy",
+                MainLine: "文章内容",
+                label1: "标签",
+                label2: "标签",
+                label3: "标签",
+                label4: "标签",
+                label5: "标签",
+                reliability: "21",
+                reliLevel: 3,
+                SubLineNum: 0,
+                SubLine: {}
+            },
+            data4: {
+                AvatarUrl: "img/Avatar/cs7.jpg",
+                UserName: "星宿七",
+                MainLine: "文章内容",
+                label1: "标签",
+                label2: "标签",
+                label3: "标签",
+                label4: "标签",
+                label5: "标签",
+                reliability: "90",
+                reliLevel: 3,
+                SubLineNum: 0,
+                SubLine: {}
+            },
+            data0: {
+                AvatarUrl: "img/Avatar/logout.png",
+                UserName: "用户名",
+                MainLine: "文章内容",
+                label1: "标签",
+                label2: "标签",
+                label3: "标签",
+                label4: "标签",
+                label5: "标签",
+                reliability: "99",
+                reliLevel: 3,
+                SubLineNum: 0,
+                SubLine: {}
+            }
+        },
+        onInit() {
+            
+        }
+    }
+</script>

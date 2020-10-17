@@ -1,5 +1,9 @@
-# 智搜医生 (Health Smart-search)
+# Smart-search for Health
+## Introduction
+## Features
+## Demonstration
 
+todo: Chinese entry
 主页入口：
 
 ​	MainPage/MainPage.ux
